@@ -21,10 +21,10 @@ def random_predict(number: int = 1) -> int:
         predict_number = np.random.randint(1, 101)  # предполагаемое число
         if number == predict_number:
             break  # выход из цикла если угадали
-        checker = [1, 100]
+        checker = [1, 101]
 
         while number != predict_number:
-            jesous = input('4eto')
+            #jesous = input('4eto')
             count += 1
             if predict_number > number:
                 checker[1] = predict_number
