@@ -32,10 +32,7 @@ def random_predict(number: int = 1) -> int:
             elif predict_number < number:
                 checker[0] = predict_number
                 predict_number = (checker[0]+checker[1]) // 2
-            print(number)
-            print(predict_number)
         if number == predict_number:
-            print('konec')
             break  # выход из цикла если угадали
             
     return count
