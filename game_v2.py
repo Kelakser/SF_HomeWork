@@ -21,17 +21,19 @@ def random_predict(number: int = 1) -> int:
         predict_number = np.random.randint(1, 101)  # предполагаемое число
         if number == predict_number:
             break  # выход из цикла если угадали
-        checker = [1, 101]
-
+    
+    # Cоздаётся, цикл,  логика, которого сократить список рандома
+    # в зависимости от числа, и взависимости от загаданного числа. 
+    
+        checing = [1, 101]
         while number != predict_number:
-            #jesous = input('4eto')
             count += 1
             if predict_number > number:
-                checker[1] = predict_number
-                predict_number = (checker[0]+checker[1]) // 2
+                checing[1] = predict_number
+                predict_number = (checing[0]+checing[1]) // 2
             elif predict_number < number:
-                checker[0] = predict_number
-                predict_number = (checker[0]+checker[1]) // 2
+                checing[0] = predict_number
+                predict_number = (checing[0]+checing[1]) // 2
         if number == predict_number:
             break  # выход из цикла если угадали
             
@@ -48,7 +50,7 @@ def score_game(random_predict) -> int:
         int: среднее количество попыток
     """
     count_ls = []
-    #np.random.seed(1)  # фиксируем сид для воспроизводимости
+    np.random.seed(1)  # фиксируем сид для воспроизводимости
     random_array = np.random.randint(1, 101, size=(1000))  # загадали список чисел
 
     for number in random_array:
